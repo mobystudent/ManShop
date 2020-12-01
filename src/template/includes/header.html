@@ -1,2 +1,17 @@
 
-<header class="header"></header>
+<header class="header">
+  <div class="container">
+    <div class="header__content">
+      <picture class="img img--logo">
+        <source class="img__item" srcset="img/logo.webp" type="image/webp"/>
+        <source class="img__item" srcset="img/logo.jp2" type="image/jp2"/><img class="img__item" src="img/logo.png" alt="logo"/>
+      </picture>
+      <div class="header__busket">
+        <svg class="icon icon--busket">
+          <use class="icon__item" xlink:href="#busket"></use>
+        </svg>
+        <div class="header__count"><span class="header__num">2</span></div>
+      </div>
+    </div>
+  </div>
+</header>

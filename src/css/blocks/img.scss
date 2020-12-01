@@ -1,4 +1,11 @@
 .img {
+	&--logo {
+		display: flex;
+		width: 106px;
+		height: 40px;
+		margin: 0 auto;
+	}
+
 	&__item {
 		height: 100%;
 		object-fit: contain;
