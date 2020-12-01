@@ -1,3 +1,8 @@
 .section {
-	
+	&--stuff {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -70px;
+		margin-bottom: -40px;
+	}
 }

@@ -10,31 +10,40 @@ block content
 		
 		main.main
 			.container
-				aside.aside
-					
-					- const filters = ['Все', 'Плащи', 'Кроссовки', 'Рубашки', 'Брюки'];
-					
-					ul.aside__filters
-						each filter in filters
-							li.aside__item
-								if filter === 'Все'
-									a.aside__link.aside__link--active(href="#")!= filter
-								else
-									a.aside__link(href="#")!= filter
+				.main__content
+					aside.aside
+						
+						- const filters = ['Все', 'Плащи', 'Кроссовки', 'Рубашки', 'Брюки'];
+						
+						ul.aside__filters
+							each filter in filters
+								li.aside__item
+									if filter === 'Все'
+										a.aside__link.aside__link--active(href="#")!= filter
+									else
+										a.aside__link(href="#")!= filter
 
-					.sort
-						header.sort__header
-							span.sort__name
-								| Сортировать
-							svg.icon.icon--arrow.icon--arrow-down
-								use.icon__item(xlink:href='#arrow')
-						.sort__body
-							
-							- const sorts = ['От дорогих к дешевым', 'От дешевых к дорогим', 'Популярные', 'Новые'];
-							
-							ul.sort__list
-								each sort in sorts
-									li.sort__item
-										a.sort__link(href="#")!= sort
+						.sort
+							header.sort__header
+								span.sort__name
+									| Сортировать
+								svg.icon.icon--arrow.icon--arrow-down
+									use.icon__item(xlink:href='#arrow')
+							.sort__body
+								
+								- const sorts = ['От дорогих к дешевым', 'От дешевых к дорогим', 'Популярные', 'Новые'];
+								
+								ul.sort__list
+									each sort in sorts
+										li.sort__item
+											a.sort__link(href="#")!= sort
+											
+					section.section.section--stuff
+						+item({img: 'item1', category: 'рубашки', name: 'Рубашка на пуговицах', price: '320', left: '20'})
+						+item({img: 'item2', category: 'рубашки', name: 'Рубашка с принтом', price: '170', left: '11'})
+						+item({img: 'item3', category: 'Обувь', name: 'Кроссовки «Kaiwa» Y3 x Adidas', price: '240', left: '134'})
+						+item({img: 'item4', category: 'рубашки', name: 'куртка-рубашка с карманами', price: '1240', left: '11'})
+						+item({img: 'item5', category: 'рубашки', name: 'Кроссовки с пряжками', price: '390', left: '11'})
+						+item({img: 'item6', category: 'рубашки', name: 'Укороченные зауженные брюки', price: '647', left: '7'})
 			
 		include includes/footer

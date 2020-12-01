@@ -1,0 +1,21 @@
+mixin item(obj)
+	article.item
+		+picture(`${obj.img}`, 'item')
+		.item__content
+			.item__gallery
+				#slider.slider
+					
+					- for (let i = 0; i < 6; i++)
+						.slider__item
+							+picture(`gallery-${i+1}`, 'gallery')
+			.item__info
+				small.item__category!= obj.category
+				span.item__name!= obj.name
+				.item__price
+					small.item__sign
+						| $
+					small.item__count-price!= obj.price
+				.item__left
+					small.item__store
+						| на складе:&nbsp
+					small.item__count-store!= obj.left
