@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-control" content="max-age=31536000, public">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <title>Главная</title>
+    <link rel="favicon" href="favicon/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script defer src="js/script.min.js"></script>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;" aria-hidden="true" focusable="false">
+      <symbol id="arrow" fill="none" viewBox="0 0 13 7">
+        <path d="M1 1l5.5 5L12 1"></path>
+      </symbol>
+    </svg>
+    <div class="wrapper">
+      <header class="header"></header>
+      <main class="main">
+        <div class="container">
+          <aside class="aside">
+            <ul class="aside__filters">
+              <li class="aside__item"><a class="aside__link aside__link--active" href="#">Все</a>
+              </li>
+              <li class="aside__item"><a class="aside__link" href="#">Плащи</a>
+              </li>
+              <li class="aside__item"><a class="aside__link" href="#">Кроссовки</a>
+              </li>
+              <li class="aside__item"><a class="aside__link" href="#">Рубашки</a>
+              </li>
+              <li class="aside__item"><a class="aside__link" href="#">Брюки</a>
+              </li>
+            </ul>
+            <div class="sort">
+              <header class="sort__header"><span class="sort__name">Сортировать</span>
+                <svg class="icon icon--arrow icon--arrow-down">
+                  <use class="icon__item" xlink:href="#arrow"></use>
+                </svg>
+              </header>
+              <div class="sort__body">
+                <ul class="sort__list">
+                  <li class="sort__item"><a class="sort__link" href="#">От дорогих к дешевым</a></li>
+                  <li class="sort__item"><a class="sort__link" href="#">От дешевых к дорогим</a></li>
+                  <li class="sort__item"><a class="sort__link" href="#">Популярные</a></li>
+                  <li class="sort__item"><a class="sort__link" href="#">Новые</a></li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

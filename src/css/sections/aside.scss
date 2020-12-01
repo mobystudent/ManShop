@@ -1,0 +1,32 @@
+.aside {
+	width: 190px;
+
+	&__filters {
+		padding-top: 125px;
+		margin-bottom: 45px;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__link {
+		font: 12px/14px $Roboto;
+		font-weight: 300;
+		line-height: 14px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: $black;
+		transition: color .25s ease-in-out;
+
+		&:hover {
+			color: rgba($black, .5);
+		}
+
+		&--active {
+			font-weight: 500;
+		}
+	}
+}

@@ -9,5 +9,32 @@ block content
 		include includes/header
 		
 		main.main
+			.container
+				aside.aside
+					
+					- const filters = ['Все', 'Плащи', 'Кроссовки', 'Рубашки', 'Брюки'];
+					
+					ul.aside__filters
+						each filter in filters
+							li.aside__item
+								if filter === 'Все'
+									a.aside__link.aside__link--active(href="#")!= filter
+								else
+									a.aside__link(href="#")!= filter
+
+					.sort
+						header.sort__header
+							span.sort__name
+								| Сортировать
+							svg.icon.icon--arrow.icon--arrow-down
+								use.icon__item(xlink:href='#arrow')
+						.sort__body
+							
+							- const sorts = ['От дорогих к дешевым', 'От дешевых к дорогим', 'Популярные', 'Новые'];
+							
+							ul.sort__list
+								each sort in sorts
+									li.sort__item
+										a.sort__link(href="#")!= sort
 			
 		include includes/footer
