@@ -4,6 +4,7 @@
 	&__header {
 		display: flex;
 		align-items: center;
+		cursor: pointer;
 	}
 
 	&__name {
@@ -16,6 +17,7 @@
 	}
 
 	&__body {
+		display: none;
 		position: absolute;
 		top: 30px;
 		left: -40px;
@@ -52,5 +54,10 @@
 		font-weight: 300;
 		letter-spacing: 0.05em;
 		color: $black;
+		transition: color .25s ease-in-out;
+
+		&:hover {
+			color: rgba($black, .5);
+		}
 	}
 }

@@ -9,12 +9,12 @@ mixin item(obj)
 						.slider__item
 							+picture(`gallery-${i+1}`, 'gallery')
 			.item__info
-				small.item__category!= obj.category
+				small.item__category(data-category!= obj.category.value)!= obj.category.title
 				span.item__name!= obj.name
 				.item__price
 					small.item__sign
 						| $
-					small.item__count-price!= obj.price
+					small.item__count-price(data-price!= obj.price)!= obj.price
 				.item__left
 					small.item__store
 						| на складе:&nbsp
