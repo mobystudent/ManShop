@@ -76,14 +76,28 @@ function slider() {
 			speed: 300,
 			prevArrow: $(item).find('.slider__arrow--prev'),
 			nextArrow: $(item).find('.slider__arrow--next'),
-			anNavFor: '.slider--single'
+			anNavFor: $(item).find('.slider--single'),
+			responsive: [
+				{
+					breakpoint: 1366,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+				{
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 4,
+					}
+				}
+			]
 		});
 
 		$(item).find('.slider--single').slick({
 			infinite: false,
 			easing: 'ease-in',
 			speed: 300,
-			anNavFor: '.slider__content'
+			anNavFor: $(item).find('.slider__content')
 		});
 	})
 }
