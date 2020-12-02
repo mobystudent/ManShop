@@ -2,13 +2,8 @@
 	display: flex;
 
 	&--logo {
-		width: 106px;
-		height: 40px;
-		margin: 0 auto;
-
-		@media screen and (max-width: 767px) {
-			margin: 0;
-		}
+		width: 100%;
+		height: auto;
 	}
 
 	&--item {

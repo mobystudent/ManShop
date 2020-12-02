@@ -12,31 +12,6 @@ block content
 			.container
 				.main__content
 					aside.aside
-						
-						-
-							const filters = [
-								{
-									title: 'Все',
-									value: 'all'
-								},
-								{
-									title: 'Плащи',
-									value: 'raincoats'
-								},
-								{
-									title: 'Кроссовки',
-									value: 'sneakers'
-								},
-								{
-									title: 'Рубашки',
-									value: 'shirts'
-								},
-								{
-									title: 'Брюки',
-									value: 'pants'
-								}
-							];
-						
 						ul.aside__filters
 							each filter in filters
 								li.aside__item
@@ -52,27 +27,6 @@ block content
 								svg.icon.icon--arrow.icon--arrow-down
 									use.icon__item(xlink:href='#arrow')
 							.sort__body
-								
-								-
-									const sorts = [
-										{
-											title: 'От дорогих к дешевым',
-											value: 'up'
-										},
-										{
-											title: 'От дешевых к дорогим',
-											value: 'down'
-										},
-										{
-											title: 'Популярные',
-											value: 'popular'
-										},
-										{
-											title: 'Новые',
-											value: 'new'
-										}
-									];
-								
 								ul.sort__list
 									each sort in sorts
 										li.sort__item
@@ -82,8 +36,8 @@ block content
 						+item({img: 'item1', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка на пуговицах', price: '320', left: '20'})
 						+item({img: 'item2', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка с принтом', price: '170', left: '11'})
 						+item({img: 'item3', category: {title: 'обувь', value: 'shoes'}, name: 'Кроссовки «Kaiwa» Y3 x Adidas', price: '240', left: '134'})
-						+item({img: 'item4', category: {title: 'рубашки', value: 'shirts'}, name: 'куртка-рубашка с карманами', price: '1240', left: '11'})
-						+item({img: 'item5', category: {title: 'рубашки', value: 'shirts'}, name: 'Кроссовки с пряжками', price: '390', left: '11'})
-						+item({img: 'item6', category: {title: 'рубашки', value: 'shirts'}, name: 'Укороченные зауженные брюки', price: '647', left: '7'})
+						//- +item({img: 'item4', category: {title: 'рубашки', value: 'shirts'}, name: 'куртка-рубашка с карманами', price: '1240', left: '11'})
+						//- +item({img: 'item5', category: {title: 'рубашки', value: 'shirts'}, name: 'Кроссовки с пряжками', price: '390', left: '11'})
+						//- +item({img: 'item6', category: {title: 'рубашки', value: 'shirts'}, name: 'Укороченные зауженные брюки', price: '647', left: '7'})
 			
 		include includes/footer

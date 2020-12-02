@@ -11,6 +11,17 @@
 		margin-bottom: 25px;
 	}
 
+	&__logo {
+		display: block;
+		width: 106px;
+		height: 40px;
+		margin: 0 auto;
+
+		@media screen and (max-width: 767px) {
+			margin: 0;
+		}
+	}
+
 	&__content {
 		position: relative;
 	}

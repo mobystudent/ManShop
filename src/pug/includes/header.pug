@@ -3,7 +3,8 @@ include ../mixins/picture
 header.header
 	.container
 		.header__content
-			+picture('logo', 'logo')
+			a.header__logo(href="#")
+				+picture('logo', 'logo')
 			.header__busket
 				svg.icon.icon--busket
 					use.icon__item(xlink:href='#busket')
