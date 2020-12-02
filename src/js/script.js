@@ -1,13 +1,13 @@
 import $ from 'jquery';
 
 $(window).on('load', () => {
-	toggleSOrtFilters();
+	toggleSortFilters();
 	switchFiltersState();
 	sortUpPrice();
 	filterCategoryItems();
 });
 
-function toggleSOrtFilters() {
+function toggleSortFilters() {
 	$('.sort__header').click(e => $(e.currentTarget).next().slideToggle());
 }
 

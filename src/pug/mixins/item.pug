@@ -10,7 +10,7 @@ mixin item(obj)
 							+picture(`gallery-${i+1}`, 'gallery')
 			.item__info
 				small.item__category(data-category!= obj.category.value)!= obj.category.title
-				span.item__name!= obj.name
+				a.item__name(href="#")!= obj.name
 				.item__price
 					small.item__sign
 						| $
