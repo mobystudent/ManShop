@@ -1,10 +1,12 @@
 import $ from 'jquery';
+import slick from 'slick-carousel';
 
 $(window).on('load', () => {
 	toggleSortFilters();
 	switchFiltersState();
 	sortUpPrice();
 	filterCategoryItems();
+	slider();
 });
 
 function toggleSortFilters() {
@@ -63,4 +65,25 @@ function filterCategoryItems() {
 			}
 		});
 	});
+}
+
+function slider() {
+	$(".item").map((i, item) => {
+		$(item).find('.slider__content').slick({
+			infinite: false,
+			slidesToShow: 5,
+			easing: 'ease-in',
+			speed: 300,
+			prevArrow: $(item).find('.slider__arrow--prev'),
+			nextArrow: $(item).find('.slider__arrow--next'),
+			anNavFor: '.slider--single'
+		});
+
+		$(item).find('.slider--single').slick({
+			infinite: false,
+			easing: 'ease-in',
+			speed: 300,
+			anNavFor: '.slider__content'
+		});
+	})
 }

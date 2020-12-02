@@ -6,18 +6,9 @@
 		height: auto;
 	}
 
-	&--item {
-		width: 100%;
-		height: 390px;
-
-		@media screen and (max-width: 1365px) {
-			height: 290px;
-		}
-	}
-
 	&--gallery {
-		width: 40px;
-		height: 40px;
+		width: 38px;
+		height: 38px;
 	}
 
 	&__item {
