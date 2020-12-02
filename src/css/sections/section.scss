@@ -4,5 +4,15 @@
 		flex-wrap: wrap;
 		margin-right: -70px;
 		margin-bottom: -40px;
+
+		@media screen and (max-width: 1365px) {
+			margin-right: -30px;
+			margin-bottom: -25px;
+		}
+
+		@media screen and (max-width: 767px) {
+			margin-right: 0;
+			margin-bottom: -20px;
+		}
 	}
 }

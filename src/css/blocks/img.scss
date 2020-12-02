@@ -5,11 +5,19 @@
 		width: 106px;
 		height: 40px;
 		margin: 0 auto;
+
+		@media screen and (max-width: 767px) {
+			margin: 0;
+		}
 	}
 
 	&--item {
 		width: 100%;
 		height: 390px;
+
+		@media screen and (max-width: 1365px) {
+			height: 290px;
+		}
 	}
 
 	&--gallery {

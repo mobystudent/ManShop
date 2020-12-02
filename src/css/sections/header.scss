@@ -2,6 +2,15 @@
 	padding: 20px 0;
 	margin-bottom: 40px;
 
+	@media screen and (max-width: 1365px) {
+		margin-bottom: 30px;
+	}
+
+	@media screen and (max-width: 767px) {
+		padding: 15px 0;
+		margin-bottom: 25px;
+	}
+
 	&__content {
 		position: relative;
 	}
@@ -12,6 +21,10 @@
 		right: 25px;
 		display: flex;
 		align-items: center;
+
+		@media screen and (max-width: 767px) {
+			right: 10px;
+		}
 	}
 
 	&__count {

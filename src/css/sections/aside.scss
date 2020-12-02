@@ -3,14 +3,41 @@
 	margin-right: 25px;
 	flex: 0 0 auto;
 
+	@media screen and (max-width: 1365px) {
+		width: 160px;
+	}
+
+	@media screen and (max-width: 767px) {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 20px;
+	}
+
 	&__filters {
 		padding-top: 5px;
 		margin-bottom: 45px;
+
+		@media screen and (max-width: 1365px) {
+			margin-bottom: 35px;
+		}
+
+		@media screen and (max-width: 767px) {
+			padding-top: 0;
+			margin-bottom: 25px;
+		}
 	}
 
 	&__item {
 		&:not(:last-child) {
 			margin-bottom: 30px;
+
+			@media screen and (max-width: 1365px) {
+				margin-bottom: 25px;
+			}
+
+			@media screen and (max-width: 767px) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 

@@ -22,10 +22,25 @@
 		border: 1px solid $black;
 		width: 190px;
 		padding: 20px 10px;
+
+		@media screen and (max-width: 1365px) {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+
+		@media screen and (max-width: 767px) {
+			position: static;
+			width: 100%;
+			border: none;
+		}
 	}
 
 	&__item {
 		text-align: right;
+
+		@media screen and (max-width: 767px) {
+			text-align: left;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 15px;
