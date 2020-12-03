@@ -8,6 +8,16 @@
 		@media screen and (max-width: 1365px) {
 			height: 290px;
 		}
+
+		.slick {
+			&-slide > div {
+				height: 100%;
+			}
+
+			&-track {
+				height: 100%;
+			}
+		}
 	}
 
 	&--gallery {
