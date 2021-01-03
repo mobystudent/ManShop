@@ -6,38 +6,35 @@ block title
 block content
 			
 	.wrapper
-		include includes/header
-		
-		main.main
-			.container
-				.main__content
-					aside.aside
-						ul.aside__filters
-							each filter in filters
-								li.aside__item
-									if filter.value === 'all'
-										a.aside__link.aside__link--active(href="#" data-category= filter.value)!= filter.title
-									else
-										a.aside__link(href="#" data-category= filter.value)!= filter.title
+		.container
+			.wrapper__content
+				include includes/header
+				aside.aside
+					ul.aside__filters
+						each filter in filters
+							li.aside__item
+								if filter.value === 'all'
+									a.aside__link.aside__link--active(href="#" data-category= filter.value)!= filter.title
+								else
+									a.aside__link(href="#" data-category= filter.value)!= filter.title
 
-						.sort
-							header.sort__header
-								span.sort__name
-									| Сортировать
-								svg.icon.icon--arrow.icon--arrow-down
-									use.icon__item(xlink:href='#arrow')
-							.sort__body
-								ul.sort__list
-									each sort in sorts
-										li.sort__item
-											a.sort__link(href="#" data-value= sort.value)!= sort.title
-											
-					section.section.section--stuff
-						+item({img: 'item1', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка на пуговицах', price: '320', left: '20'})
-						+item({img: 'item2', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка с принтом', price: '170', left: '11'})
-						+item({img: 'item3', category: {title: 'обувь', value: 'shoes'}, name: 'Кроссовки «Kaiwa» Y3 x Adidas', price: '240', left: '134'})
-						+item({img: 'item4', category: {title: 'рубашки', value: 'shirts'}, name: 'куртка-рубашка с карманами', price: '1240', left: '11'})
-						+item({img: 'item5', category: {title: 'рубашки', value: 'shirts'}, name: 'Кроссовки с пряжками', price: '390', left: '11'})
-						+item({img: 'item6', category: {title: 'рубашки', value: 'shirts'}, name: 'Укороченные зауженные брюки', price: '647', left: '7'})
-			
-		include includes/footer
+					.sort
+						header.sort__header
+							span.sort__name
+								| Сортировать
+							svg.icon.icon--arrow.icon--arrow-down
+								use.icon__item(xlink:href='#arrow')
+						.sort__body
+							ul.sort__list
+								each sort in sorts
+									li.sort__item
+										a.sort__link(href="#" data-value= sort.value)!= sort.title
+										
+				main.main
+					+item({img: 'item1', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка на пуговицах', price: '320', left: '20'})
+					+item({img: 'item2', category: {title: 'рубашки', value: 'shirts'}, name: 'Рубашка с принтом', price: '170', left: '11'})
+					+item({img: 'item3', category: {title: 'обувь', value: 'shoes'}, name: 'Кроссовки «Kaiwa» Y3 x Adidas', price: '240', left: '134'})
+					+item({img: 'item4', category: {title: 'рубашки', value: 'shirts'}, name: 'куртка-рубашка с карманами', price: '1240', left: '11'})
+					+item({img: 'item5', category: {title: 'рубашки', value: 'shirts'}, name: 'Кроссовки с пряжками', price: '390', left: '11'})
+					+item({img: 'item6', category: {title: 'рубашки', value: 'shirts'}, name: 'Укороченные зауженные брюки', price: '647', left: '7'})
+		

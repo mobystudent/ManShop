@@ -1,16 +1,10 @@
 .aside {
-	width: 190px;
-	margin-right: 25px;
-	flex: 0 0 auto;
-
-	@media screen and (max-width: 1365px) {
-		width: 160px;
-	}
+	grid-area: sidebar;
 
 	@media screen and (max-width: 767px) {
-		width: 100%;
-		margin-right: 0;
 		margin-bottom: 20px;
+		grid-row: 2 / 3;
+		grid-column: 1;
 	}
 
 	&__filters {

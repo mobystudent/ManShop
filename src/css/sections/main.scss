@@ -1,0 +1,20 @@
+.main {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	grid-area: content;
+	padding: 0 25px;
+	margin-bottom: -30px;
+
+	@media screen and (max-width: 1365px) {
+		padding: 0 15px;
+		margin-bottom: -25px;
+	}
+
+	@media screen and (max-width: 767px) {
+		grid-row: 3;
+		grid-column: 1;
+		padding: 0;
+		margin-bottom: -20px;
+	}
+}
