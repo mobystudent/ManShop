@@ -1,3 +1,5 @@
+"use strict";
+
 import $ from 'jquery';
 import slick from 'slick-carousel';
 
@@ -76,7 +78,6 @@ function slider() {
 			speed: 300,
 			prevArrow: $(item).find('.slider__arrow--prev'),
 			nextArrow: $(item).find('.slider__arrow--next'),
-			anNavFor: $(item).find('.slider--single'),
 			responsive: [
 				{
 					breakpoint: 1366,
@@ -91,13 +92,6 @@ function slider() {
 					}
 				}
 			]
-		});
-
-		$(item).find('.slider--single').slick({
-			infinite: false,
-			easing: 'ease-in',
-			speed: 300,
-			anNavFor: $(item).find('.slider__content')
 		});
 	})
 }

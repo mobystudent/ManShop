@@ -18,7 +18,7 @@
     "browser-sync": "^2.26.12",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
+    "gulp-autoprefixer": "^7.0.1",
     "gulp-better-rollup": "^4.0.1",
     "gulp-clean-css": "^4.0.0",
     "gulp-group-css-media-queries": "^1.2.2",

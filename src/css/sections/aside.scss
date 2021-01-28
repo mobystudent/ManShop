@@ -36,10 +36,7 @@
 	}
 
 	&__link {
-		font: 12px/14px $Roboto;
-		font-weight: 300;
-		line-height: 14px;
-		letter-spacing: 0.05em;
+		@extend .text--premedium;
 		text-transform: uppercase;
 		color: $black;
 		transition: color .25s ease-in-out;

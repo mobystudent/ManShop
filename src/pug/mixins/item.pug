@@ -1,7 +1,6 @@
 mixin item(obj)
 	article.item
-		.slider.slider--single
-			+picture(`${obj.img}`, 'item')
+		+picture(`${obj.img}`, 'item')
 		.item__content
 			.item__gallery.slider.slider--gallery
 				.slider__arrow.slider__arrow--prev

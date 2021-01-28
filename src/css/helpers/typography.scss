@@ -1,0 +1,30 @@
+.text {
+	&--large {
+		font: 20px/24px $roboto;
+		font-weight: 500;
+		letter-spacing: .02em;
+	}
+
+	&--uppermedium {
+		font: 16px/20px $roboto;
+		font-weight: 300;
+	}
+
+	&--medium {
+		font: 14px/16px $roboto;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+	}
+
+	&--premedium {
+		font: 12px/14px $roboto;
+		font-weight: 300;
+		letter-spacing: 0.05em;
+	}
+
+	&--small {
+		font: 10px/12px $roboto;
+		font-weight: 300;
+		letter-spacing: .2em;
+	}
+}

@@ -8,11 +8,9 @@
 	}
 
 	&__name {
-		font: 14px/16px $Roboto;
-		font-weight: 300;
-		letter-spacing: 0.05em;
-		color: $black;
 		display: inline-block;
+		@extend .text--medium;
+		color: $black;
 		margin-right: 10px;
 	}
 
@@ -50,9 +48,7 @@
 	}
 
 	&__link {
-		font: 14px/16px $Roboto;
-		font-weight: 300;
-		letter-spacing: 0.05em;
+		@extend .text--medium;
 		color: $black;
 		transition: color .25s ease-in-out;
 

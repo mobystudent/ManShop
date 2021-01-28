@@ -45,8 +45,9 @@
 	}
 
 	&__num {
-		font: 14px/16px $Roboto;
+		@extend .text--medium;
 		font-weight: 500;
+		letter-spacing: 0;
 		color: $white;
 	}
 }

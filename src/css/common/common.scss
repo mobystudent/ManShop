@@ -10,9 +10,10 @@ body {
 
 	&__content {
 		display: grid;
-		grid-template-areas: "header header" "sidebar content";
+		grid-template-areas: "header header"
+							"sidebar content";
 		grid-template-columns: 190px 1fr;
-		grid-template-rows: 1fr auto auto;
+		grid-template-rows: 1fr auto;
 		padding-bottom: 120px;
 
 		@media screen and (max-width: 1365px) {
@@ -21,8 +22,9 @@ body {
 		}
 
 		@media screen and (max-width: 767px) {
+			grid-template-areas: "header sidebar content";
 			grid-template-columns: 1fr;
-			flex-flow: column;
+			grid-template-rows: 1fr repeat(2, auto);
 		}
 	}
 
