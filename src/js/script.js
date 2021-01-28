@@ -30,6 +30,7 @@ function sortUpPrice() {
 
 		const price_arr = $('.item__count-price').map((i, item) => {
 			const id = $(item).data().price;
+			$(item).parents('.item').attr('data-id', i+1);
 
 			return {
 				id: parseInt(id),
@@ -39,9 +40,9 @@ function sortUpPrice() {
 		let sortPriceArr;
 
 		if ($(e.currentTarget).data().value == 'up') {
-			sortPriceArr = price_arr.sort((a, b) => a.id > b.id ? 1 : -1);
-		} else if ($(e.currentTarget).data().value == 'down') {
 			sortPriceArr = price_arr.sort((a, b) => a.id < b.id ? 1 : -1);
+		} else if ($(e.currentTarget).data().value == 'down') {
+			sortPriceArr = price_arr.sort((a, b) => a.id > b.id ? 1 : -1);
 		}
 
 		showSortItems(sortPriceArr);
@@ -49,7 +50,7 @@ function sortUpPrice() {
 }
 
 function showSortItems(pricies) {
-	[...pricies].map((item, i) => $(`.item:nth-child(${item.num})`).css('order', i + 1));
+	[...pricies].map((item) => $(`.item[data-id=${item.num}]`).appendTo($(".main")));
 }
 
 function filterCategoryItems() {
