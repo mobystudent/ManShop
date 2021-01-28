@@ -28,7 +28,7 @@ function sortUpPrice() {
 	$('.sort__link').click(e => {
 		e.preventDefault();
 
-		const priceArr = $('.item__count-price').map((i, item) => {
+		const price_arr = $('.item__count-price').map((i, item) => {
 			const id = $(item).data().price;
 
 			return {
@@ -39,9 +39,9 @@ function sortUpPrice() {
 		let sortPriceArr;
 
 		if ($(e.currentTarget).data().value == 'up') {
-			sortPriceArr = priceArr.sort((a, b) => a.id > b.id ? 1 : -1);
+			sortPriceArr = price_arr.sort((a, b) => a.id > b.id ? 1 : -1);
 		} else if ($(e.currentTarget).data().value == 'down') {
-			sortPriceArr = priceArr.sort((a, b) => a.id < b.id ? 1 : -1);
+			sortPriceArr = price_arr.sort((a, b) => a.id < b.id ? 1 : -1);
 		}
 
 		showSortItems(sortPriceArr);
@@ -54,15 +54,15 @@ function showSortItems(pricies) {
 
 function filterCategoryItems() {
 	$('.aside__link').click(e => {
-		const filterCategory = $(e.currentTarget).data('category');
+		const filter_category = $(e.currentTarget).data('category');
 
 		$('.item').hide();
 		$('.item__category').map((i, item) => {
-			const itemCategory = $(item).data('category');
+			const item_category = $(item).data('category');
 
-			if (filterCategory == itemCategory) {
+			if (filter_category == item_category) {
 				$(item).closest('.item').show();
-			} else if (filterCategory == 'all') {
+			} else if (filter_category == 'all') {
 				$('.item').show();
 			}
 		});
