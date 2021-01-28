@@ -37,29 +37,30 @@ const dirBuild = 'build',
 	path = {
 		build: {
 			html: dirBuild,
-			css: dirBuild,
+			scss: dirBuild,
 			pug: dirSrc + '/template',
 			fonts: dirBuild + '/fonts',
 			favicon: dirBuild + '/favicon',
-			img: dirBuild + '/img',
+			img: dirBuild + '/images',
 			js: dirBuild + '/js'
 		},
 		src: {
 			html: dirSrc + '/template/*.html',
-			css: dirSrc + '/css/style.scss',
+			scss: dirSrc + '/css/style.scss',
 			pug: dirSrc + '/pug/**/*.pug',
 			fonts: dirSrc + '/fonts/*.{ttf,otf}',
 			favicon: dirSrc + '/favicon/*',
-			img: dirSrc + '/img/**/*',
-			imgPic: dirSrc + '/img/*.{jpg,jpeg,png}',
+			img: dirSrc + '/images/backgrounds/*',
+			imgPic: dirSrc + '/images/pictures/*.{jpg,jpeg,png}',
 			js: dirSrc + '/js/script.js'
 		},
 		watch: {
 			html: dirSrc + '/template/**/*.html',
-			css: dirSrc + '/css/**/*.scss',
+			scss: dirSrc + '/css/**/*.scss',
 			pug: dirSrc + '/pug/**/*.pug',
+			fonts: dirSrc + '/fonts/*',
 			favicon: dirSrc + '/favicon/*',
-			img: dirSrc + '/img/**/*',
+			img: dirSrc + '/images/**/*',
 			js: dirSrc + '/js/**/*.js'
 		}
 	};
@@ -71,7 +72,7 @@ function clean() {
 
 /* conversion sass */
 function gulpSass() {
-	return gulp.src(path.src.css)
+	return gulp.src(path.src.scss)
 		.pipe(sourcemaps.init())
 		.pipe(sass({
 			outputStyle: 'compressed'
@@ -82,11 +83,11 @@ function gulpSass() {
 			grid: true,
 			overrideBrowserslist: ['> 0.4%, last 4 versions, firefox >= 52, edge >= 16, ie >= 11, safari >=10']
 		}))
-		.pipe(gulp.dest(path.build.css))
+		.pipe(gulp.dest(path.build.scss))
 		.pipe(cleanCSS())
 		.pipe(rename('style.min.css'))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(path.build.css));
+		.pipe(gulp.dest(path.build.scss));
 }
 
 /* conversion fonts */
@@ -126,9 +127,14 @@ function gulpImages() {
 		.pipe(webp({
 			quality: 70
 		}))
-		.pipe(gulp.src(path.src.img))
+		.pipe(gulp.src(path.src.imgPic))
 		.pipe(imagemin([
 			imagemin.mozjpeg({quality: 90, progressive: true}),
+			imagemin.optipng()
+		]))
+		.pipe(gulp.src(path.src.img))
+		.pipe(imagemin([
+			imagemin.mozjpeg({quality: 30, progressive: true}),
 			imagemin.optipng()
 		]))
 		.pipe(gulp.dest(path.build.img));
@@ -172,16 +178,18 @@ function gulpWatch() {
 		server: './'+dirBuild
 	});
 
-	gulp.watch(path.watch.css, gulp.series(gulpSass));
+	gulp.watch(path.watch.scss, gulp.series(gulpSass));
 	gulp.watch(path.watch.pug, gulp.series(gulpPug));
 	gulp.watch(path.watch.html, gulp.series(gulpHTML));
 	gulp.watch(path.watch.js, gulp.series(gulpJS));
+	gulp.watch(path.watch.img, gulp.series(gulpImages));
+	gulp.watch(path.watch.fonts, gulp.series(gulpFonts));
 }
 
 const dev = gulp.series(clean, gulp.parallel(gulp.series(gulpImages, gulpFonts, gulpSass), gulpHTML, gulpPug, gulpJS, gulpFavicon)),
 	build = gulp.series(clean, gulp.parallel(gulp.series(gulpImages, gulpFonts, gulpSass), gulpHTML, gulpJS, gulpFavicon));
 
-exports.srcault = build;
+exports.default = build;
 exports.watch = gulp.series(build, gulpWatch);
 exports.dev = gulp.series(dev, gulpWatch);
 exports.elem = gulp.series(gulp.parallel(gulpFonts, gulpFavicon, gulpImages));
