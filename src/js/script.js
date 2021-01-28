@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import $ from 'jquery';
 import slick from 'slick-carousel';
@@ -34,7 +34,7 @@ function sortUpPrice() {
 			return {
 				id: parseInt(id),
 				num: i+1
-			}
+			};
 		});
 		let sortPriceArr;
 
@@ -93,5 +93,5 @@ function slider() {
 				}
 			]
 		});
-	})
+	});
 }
